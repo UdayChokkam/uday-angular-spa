@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import {RouterModule} from '@angular/router';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import {AuthComponent} from "./auth/auth.component";
 
 registerLocaleData(en);
 @NgModule({
@@ -20,7 +22,8 @@ registerLocaleData(en);
     AppComponent,
     HomeComponent,
     DriversComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -30,14 +33,17 @@ registerLocaleData(en);
     NgZorroAntdModule,
     IconsProviderModule,
     BrowserAnimationsModule,
+    AmplifyAngularModule,
     RouterModule.forRoot([
+      { path: '', component: AuthComponent },
       { path: 'home', component: HomeComponent },
       { path: 'drivers', component: DriversComponent },
       { path: 'documents', component: DocumentsComponent },
     ])
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    AmplifyService
   ],
   bootstrap: [AppComponent]
 })
