@@ -1,0 +1,24 @@
+  <div>
+    <h2>Content</h2>
+  </div>
+  <div>
+    <nz-table>
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let driver of drivers ">
+        <td nzSpan="20">{{driver.id}}</td>
+        <td nzSpan="20">{{driver.name}}</td>
+        <td nzSpan="20">{{driver.description}}</td>
+      </tr>
+      <button (click)="createItem()"  >Create item</button>
+      <button (click)="deleteItem()"  >Delete item</button>
+      </tbody>
+    </nz-table>
+  </div>
+
