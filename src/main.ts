@@ -7,6 +7,13 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 Amplify.configure(awsconfig);
+Amplify.configure({
+  API: {
+    graphql_endpoint: 'https://n2e2vcyggfd6demlmeeho7n7xy.appsync-api.eu-west-1.amazonaws.com/graphql'
+  }
+});
+
+
 if (environment.production) {
   enableProdMode();
 }

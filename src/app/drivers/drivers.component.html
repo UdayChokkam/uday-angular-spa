@@ -11,14 +11,42 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let driver of drivers ">
-        <td nzSpan="20">{{driver.id}}</td>
-        <td nzSpan="20">{{driver.name}}</td>
-        <td nzSpan="20">{{driver.description}}</td>
+      <tr *ngFor="let todo of todos ">
+        <td nzSpan="20">{{todo.id}}</td>
+        <td nzSpan="20">{{todo.title}}</td>
+        <td nzSpan="20">{{todo.content}}</td>
       </tr>
-      <button (click)="createItem()"  >Create item</button>
-      <button (click)="deleteItem()"  >Delete item</button>
+      <!--<button (click)="createItem()"  >Create item</button>
+      <button (click)="deleteItem()"  >Delete item</button>-->
       </tbody>
     </nz-table>
+
+    <!--<form [formGroup]="todoForm" (ngSubmit)="createItem(todoForm.value)">
+
+      <div>
+        <label for="id">
+          id
+        </label>
+        <input id="id" type="text" formControlName="id">
+      </div>
+
+      <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+
+      <div>
+        <label for="content">
+          Content
+        </label>
+        <input id="content" type="text" formControlName="content">
+      </div>
+
+      <button class="button" type="submit">Create item</button>
+
+    </form>-->
+
   </div>
 

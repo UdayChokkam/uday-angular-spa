@@ -1,19 +1,21 @@
 <nz-layout>
   <nz-header>
-    <div class="logo"></div>
+<!--    <img  src="src/assets/afs-logo.png"/>-->
     <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+
       <li [routerLink]="['/home']" nz-menu-item nzSelected>Home</li>
-      <li [routerLink]="['/drivers']" nz-menu-item>Drivers</li>
-      <li [routerLink]="['/documents']" nz-menu-item>Documents</li>
+      <li [routerLink]="['home/todos']" nz-menu-item>Drivers</li>
+      <li [routerLink]="['home/documents']" nz-menu-item>Documents</li>
     </ul>
   </nz-header>
   <nz-layout>
+
     <nz-sider nzWidth="200px" nzTheme="light">
       <ul nz-menu nzMode="inline" class="sider-menu">
         <li [routerLink]="['/home']" nz-submenu nzOpen nzIcon="user" nzTitle="Home">
           <ul>
-            <li [routerLink]="['/drivers']" nz-menu-item nzSelected>Drivers</li>
-            <li [routerLink]="['/documents']" nz-menu-item>Documents</li>
+            <li [routerLink]="['home/todos']" nz-menu-item nzSelected>Drivers</li>
+            <li [routerLink]="['home/documents']" nz-menu-item>Documents</li>
           </ul>
         </li>
       </ul>

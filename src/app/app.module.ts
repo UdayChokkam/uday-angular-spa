@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import {RouterModule} from '@angular/router';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
-import {AuthComponent} from "./auth/auth.component";
+import {AuthComponent} from './auth/auth.component';
 
 registerLocaleData(en);
 @NgModule({
@@ -35,11 +35,12 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     AmplifyAngularModule,
     RouterModule.forRoot([
-      { path: '', component: AuthComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'drivers', component: DriversComponent },
-      { path: 'documents', component: DocumentsComponent },
-    ])
+      {path: '', component: AuthComponent},
+      {path: 'home', component: HomeComponent},
+      {path: 'home/todos', component: DriversComponent},
+      {path: 'home/documents', component: DocumentsComponent},
+    ]),
+    ReactiveFormsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
